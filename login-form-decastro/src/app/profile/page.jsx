@@ -15,7 +15,7 @@ export default function ProfilePage() {
         className="w-36 h-36 rounded-full mx-auto my-5 block object-cover"
       />
 
-      <p className="mb-5">Welcome, admin!</p>
+      <p className="mb-5">Welcome, reynaldo!</p>
 
       <button
         onClick={() => router.back()}
