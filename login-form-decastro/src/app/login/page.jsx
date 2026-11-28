@@ -35,51 +35,56 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-20 font-sans">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
+    <div className="min-h-screen bg-gray-500 flex items-center justify-center font-sans">
+      <div className="w-full max-w-sm bg-white p-8 rounded-lg shadow-md">
+        <h1 className="text-2xl font-bold mb-1">Welcome to this website</h1>
+        <h2 className="text-xl font-semibold text-gray-600 mb-6">
+          Kindly Login
+        </h2>
 
-      <div className="mb-3">
-        <label className="block mb-1">Username</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter username"
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-
-      <div className="mb-3">
-        <label className="block mb-1">Password</label>
-        <input
-          type={showPassword ? "text" : "password"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter password"
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="inline-flex items-center cursor-pointer">
+        <div className="mb-3">
+          <label className="block mb-1">Username</label>
           <input
-            type="checkbox"
-            checked={showPassword}
-            onChange={(e) => setShowPassword(e.target.checked)}
-            className="mr-2"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter username"
+            className="w-full p-2 border border-gray-300 rounded"
           />
-          Show Password
-        </label>
+        </div>
+
+        <div className="mb-3">
+          <label className="block mb-1">Password</label>
+          <input
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={showPassword}
+              onChange={(e) => setShowPassword(e.target.checked)}
+              className="mr-2"
+            />
+            Show Password
+          </label>
+        </div>
+
+        {error && <p className="text-red-500 mb-3">{error}</p>}
+
+        <button
+          onClick={handleLogin}
+          className="w-full p-2 bg-blue-600 text-white rounded cursor-pointer hover:bg-blue-700"
+        >
+          Login
+        </button>
       </div>
-
-      {error && <p className="text-red-500 mb-3">{error}</p>}
-
-      <button
-        onClick={handleLogin}
-        className="w-full p-2 bg-blue-600 text-white rounded cursor-pointer hover:bg-blue-700"
-      >
-        Login
-      </button>
     </div>
   );
 }
